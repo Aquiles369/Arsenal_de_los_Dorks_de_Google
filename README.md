@@ -1,5 +1,10 @@
 # Google Dorks Arsenal — >12,000 dorks
 
+
+<p align="center">
+ <img  height="470rem" alt="GIF" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXM5bHI4bXkwNnBoMHFidmg1bzByMHI0ejhvcHRzNG4yY2k0NGppOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/j3EQPDmk6k7UsQ5IMq/giphy.gif"/>
+</p>
+
 Tool_Google_dorks_12k
 
 Repositorio con una colección extensa y categorizada de >12,000 Google Dorks pensada para investigación, análisis y pruebas en entornos controlados. Fácil de buscar, filtrar e integrar en tus pipelines y herramientas de reconocimiento.
