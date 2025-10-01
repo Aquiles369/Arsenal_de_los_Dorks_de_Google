@@ -9,7 +9,7 @@
  <img  height="470rem" alt="GIF" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExemV6OGJ2MmY0MWtjM2llcDdrbHlkbm9qZm5rZGhjaGhybWFicGQzcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/XdLPY0v1jiPmsfp9ik/giphy.gif"/>
 </p>
 
-<picture> <img src="https://github.com/Aquiles369/iconos/blob/main/2025-10-01-20-09-06.gif">  </picture>
+<picture> <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">  </picture>
 <br>
 
  ### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXkzb2lnanpkZjRyNmZpNXBpbTZwa2R1ZzVnbHU5NTRpc283M3d6cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cHzz94qovyOVa/giphy.gif" width = 75px>  </picture> Arsenal de los Dorks de Google
@@ -21,7 +21,7 @@
 
 
 <p align="center">
- <img  height="420rem" alt="GIF" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2Jnd2Nrc293aDBtdHFpMnpyY25peXBvMjVpMTQ5MHcwZ2sxeHRoMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/zKsl6TMQVRpx1U04Ai/giphy.gif"/>
+ <img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/2025-10-01-20-09-06.gif"/>
 </p>
 
 <br><br>
