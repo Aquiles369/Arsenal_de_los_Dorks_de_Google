@@ -21,39 +21,43 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 
 - **Resumen rápido:**
 
-Colección: >12,000 dorks (formato web / dataset).
+• **Colección**: >12,000 dorks (formato web / dataset).
 
-Categorías: incluye 14 categorías principales (≈7k dorks) + 4 categorías personalizadas extraidas de informes/medium/bug-bounty, y más de 30 subcategorías en total.
+• **Categorías**: incluye 14 categorías principales (≈7k dorks) + 4 categorías personalizadas extraidas de informes/medium/bug-bounty, y más de 30 subcategorías en total.
 
-Formato: interfaz web local (HTML/JS) + export/import JSON. Toda la data se guarda en localStorage por defecto (offline, en tu máquina).
+• **Formato**: interfaz web local (HTML/JS) + export/import JSON. Toda la data se guarda en localStorage por defecto (offline, en tu máquina).
 
-Licencias sugeridas: Código → MIT. Dataset (dorks) → CC0 (o la que elijas).
+• Licencias sugeridas: Código → MIT. Dataset (dorks) → CC0 (o la que elijas).
 
-Características principales (presentación)
+• Características principales (presentación)
 
-Interfaz intuitiva para buscar, filtrar y seleccionar dorks por categoría, subcategoría o texto.
+• Interfaz intuitiva para buscar, filtrar y seleccionar dorks por categoría, subcategoría o texto.
 
-Selector de objetivo (target) simple: ponés el dominio/host y elegís cuántos dorks lanzar y el intervalo entre requests (rate control).
+• Selector de objetivo (target) simple: ponés el dominio/host y elegís cuántos dorks lanzar y el intervalo entre requests (rate control).
 
-Batch control: podés seleccionar abrir/executar 20 / 50 / N dorks a la vez, o deseleccionar individualmente.
+• Batch control: podés seleccionar abrir/executar 20 / 50 / N dorks a la vez, o deseleccionar individualmente.
 
-Gestión completa: crear, editar o eliminar dorks individualmente; agregar categorías nuevas; borrar categorías completas.
+• Gestión completa: crear, editar o eliminar dorks individualmente; agregar categorías nuevas; borrar categorías completas.
 
-Importación/Exportación: cargar/guardar todo en JSON (importá un JSON y la app recarga con tus dorks, notas y categorías).
+• Importación/Exportación: cargar/guardar todo en JSON (importá un JSON y la app recarga con tus dorks, notas y categorías).
 
-Modo de edición masiva: pegar 1 dork por línea o cientos a la vez para añadir rápidamente.
+• Modo de edición masiva: pegar 1 dork por línea o cientos a la vez para añadir rápidamente.
 
-Notas: podés añadir notas a cada categoría y a cada dork. Las notas se guardan con Ctrl+S (o botón guardar).
+• Notas: podés añadir notas a cada categoría y a cada dork. Las notas se guardan con Ctrl+S (o botón guardar).
 
-UI → cuando un dork/categoría tiene nota, se muestra un círculo rojo indicador; hover muestra contenido de la nota sin necesidad de abrir.
+• UI → cuando un dork/categoría tiene nota, se muestra un círculo rojo indicador; hover muestra contenido de la nota sin necesidad de abrir.
 
-Buscador por categoría y por contenido (fulltext).
+• Buscador por categoría y por contenido (fulltext).
 
-Reseteo rápido al estado por defecto si querés empezar de cero.
+• Reseteo rápido al estado por defecto si querés empezar de cero.
 
-También tiene la opción para copiar todos los dorks de la categoría.
+• También tiene la opción para copiar todos los dorks de la categoría.
 
-Export JSON con todas las notas y metadatos (listo para compartir o versionar).
+• Export JSON con todas las notas y metadatos (listo para compartir o versionar).
+
+
+<br>
+<br>
 
 
 Uso (modo web local)
