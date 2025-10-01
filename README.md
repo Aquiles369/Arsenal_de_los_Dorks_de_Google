@@ -1,8 +1,11 @@
-# Google Dorks Arsenal — >12,000 dorks
+<h1 align="center"><img height="40" src="https://github.com/Aquiles369/iconos/blob/main/img/lobo1.gif"><img height="40" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWx4YTl1dW9scXlqZDk2cTdyY2VvcXQwMG40OGoxY25rZzV0MDZhcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/peSyJWjNTRfzaWh49M/giphy.gif">"Google Dorks Arsenal"<img height="40" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNWx4YTl1dW9scXlqZDk2cTdyY2VvcXQwMG40OGoxY25rZzV0MDZhcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/peSyJWjNTRfzaWh49M/giphy.gif"><img height="35" src="https://github.com/Aquiles369/iconos/blob/main/img/lobo1.gif"></h1>
+
+<br>
+
 
 
 <p align="center">
- <img  height="470rem" alt="GIF" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXM5bHI4bXkwNnBoMHFidmg1bzByMHI0ejhvcHRzNG4yY2k0NGppOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/j3EQPDmk6k7UsQ5IMq/giphy.gif"/>
+ <img  height="470rem" alt="GIF" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExemV6OGJ2MmY0MWtjM2llcDdrbHlkbm9qZm5rZGhjaGhybWFicGQzcSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/XdLPY0v1jiPmsfp9ik/giphy.gif"/>
 </p>
 
 Tool_Google_dorks_12k
