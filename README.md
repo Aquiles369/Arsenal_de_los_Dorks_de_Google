@@ -105,7 +105,7 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 
 - Import / Export<br>
 
-- Exportar: descarga JSON con estructura { categories:[], dorks:[], notes:[], meta:{timestamp, version} }.<br>
+- Exportar: descarga JSON con estructura { categories:[], dorks:[], notes:[], meta:{timestamp, version} .<br>
 
 - Importar: subí JSON válido — la app reconstituye categorías, dorks y notas.<br>
 
