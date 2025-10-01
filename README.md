@@ -17,7 +17,7 @@ Repositorio con una colección extensa y categorizada de >12,000 Google Dorks pe
 Advertencia: uso responsable y legal únicamente — no escanees infraestructuras sin autorización, canal Youtuve tools demo <a href="https://www.youtube.com/@Aquiles369"></a>.
 
 <br>
-<br>
+
 
 <p align="center">
  <img  height="420rem" alt="GIF" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2Jnd2Nrc293aDBtdHFpMnpyY25peXBvMjVpMTQ5MHcwZ2sxeHRoMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/zKsl6TMQVRpx1U04Ai/giphy.gif"/>
@@ -26,7 +26,7 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 <br><br>
 
 
-## <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOG80ZGFkeXhmY3k1a3I0amM4d3c4dTVsYXJsdXN3YTdnM3lscmV3aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/QWLB90zujnfMUWEUBb/giphy.gif" width = 80px>  </picture> Resumen rápido
+### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOG80ZGFkeXhmY3k1a3I0amM4d3c4dTVsYXJsdXN3YTdnM3lscmV3aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/QWLB90zujnfMUWEUBb/giphy.gif" width = 80px>  </picture> Resumen rápido
 <br><br>
 • Colección: 12,000 dorks (formato web / dataset).<br><br>
 • Categorías: incluye 14 categorías principales (≈7k dorks) + 4 categorías personalizadas extraidas de informes/medium/bug-bounty, y más de 30 subcategorías en total.<br><br>
