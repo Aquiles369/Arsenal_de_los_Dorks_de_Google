@@ -36,8 +36,6 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 <br>
-<br>
-
 
 **Características principales** 
 
@@ -64,9 +62,9 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 • También tiene la opción para copiar todos los dorks de la categoría.<br>
 
 • Export JSON con todas las notas y metadatos (listo para compartir o versionar).<br>
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 <br>
-
 
 
 **Uso (modo web local)**
@@ -85,7 +83,8 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 - Pulsá Start para abrir/ejecutar los dorks seleccionados.<br>
 
 - Podés pausar / cancelar en cualquier momento.<br><br>
-
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
+<br>
 
 
 **Gestión de dorks**
