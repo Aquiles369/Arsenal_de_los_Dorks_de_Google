@@ -90,8 +90,8 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 <br>
 
 
- ### <picture> <img src = "https://giphy.com/stickers/disgusting-disgusted-eew-FrHTohsmhMIFXTz0Da" width = 70px>  </picture> Gestión de dorks
 
+ ### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2VjdnRtdnl1dnZmbmowamU5dm4xaTEwbm96NnF4enp1aWhwM2FjZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/FrHTohsmhMIFXTz0Da/giphy.gif" width = 70px>  </picture> Gestión de dorks
 
 - Agregar: botón “Agregar Dorks” → pegar 1 por línea o subir JSON.<br>
 
