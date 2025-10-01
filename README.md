@@ -13,6 +13,7 @@
 <br>
 
  ### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXkzb2lnanpkZjRyNmZpNXBpbTZwa2R1ZzVnbHU5NTRpc283M3d6cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cHzz94qovyOVa/giphy.gif" width = 75px>  </picture> Arsenal de los Dorks de Google
+ <br>
 
 Repositorio con una colección extensa y categorizada de (12,000 Google Dorks) pensada para investigación, análisis y pruebas en entornos controlados. Fácil de buscar, filtrar e integrar en tus pipelines y herramientas de reconocimiento.
 Advertencia: uso responsable y legal únicamente — no escanees infraestructuras sin autorización, demo de la tool <a href="https://www.youtube.com/@Aquiles369" target="_blank" rel="noopener">Youtube</a>.
@@ -45,6 +46,8 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 
 
  ### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmdmaWV4eW9vanV6MW1sbDZhMm5jcWt4ZWZub3N1NGxreGtyNDJnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/H1MtdYI4wIZXFgbAjx/giphy.gif" width = 70px>  </picture> Características principales
+
+ <br>
 
 • Interfaz intuitiva para buscar, filtrar y seleccionar dorks por categoría, subcategoría o texto.<br>
 
@@ -96,6 +99,8 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 
 
  ### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2VjdnRtdnl1dnZmbmowamU5dm4xaTEwbm96NnF4enp1aWhwM2FjZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/FrHTohsmhMIFXTz0Da/giphy.gif" width = 70px>  </picture> Gestión de dorks
+
+ <br>
 
 - Agregar: botón “Agregar Dorks” → pegar 1 por línea o subir JSON.<br>
 
