@@ -5,6 +5,7 @@ Tool_Google_dorks_12k
 Repositorio con una colección extensa y categorizada de >12,000 Google Dorks pensada para investigación, análisis y pruebas en entornos controlados. Fácil de buscar, filtrar e integrar en tus pipelines y herramientas de reconocimiento.
 Advertencia: uso responsable y legal únicamente — no escanees infraestructuras sin autorización. (Ver RESPONSIBLE_USE.md)
 
+
 Resumen rápido
 
 Colección: >12,000 dorks (formato web / dataset).
@@ -37,7 +38,10 @@ Buscador por categoría y por contenido (fulltext).
 
 Reseteo rápido al estado por defecto si querés empezar de cero.
 
+También tiene la opción para copiar todos los dorks de la categoría.
+
 Export JSON con todas las notas y metadatos (listo para compartir o versionar).
+
 
 Uso (modo web local)
 
