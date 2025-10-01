@@ -38,7 +38,8 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 <br>
 <br>
 
-**Características principales** 
+
+ ### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmdmaWV4eW9vanV6MW1sbDZhMm5jcWt4ZWZub3N1NGxreGtyNDJnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/H1MtdYI4wIZXFgbAjx/giphy.gif" width = 70px>  </picture> Características principales
 
 • Interfaz intuitiva para buscar, filtrar y seleccionar dorks por categoría, subcategoría o texto.<br>
 
@@ -68,7 +69,8 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 <br>
 
 
-**Uso (modo web local)**
+ ### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnVkOW5hejU3YWwzenhmN3lxNm45d3Y4YTF0ZjNzODB6amx4MGl3ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lN8r2PtfE9r9BqbNjD/giphy.gif" width = 70px>  </picture> Uso (modo web local)
+
 <br>
 
 - Abrí index.html en tu navegador (o desplegalo en tu laboratorio local).<br>
@@ -88,7 +90,8 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 <br>
 
 
-**Gestión de dorks**
+ ### <picture> <img src = "https://giphy.com/stickers/disgusting-disgusted-eew-FrHTohsmhMIFXTz0Da" width = 70px>  </picture> Gestión de dorks
+
 
 - Agregar: botón “Agregar Dorks” → pegar 1 por línea o subir JSON.<br>
 
