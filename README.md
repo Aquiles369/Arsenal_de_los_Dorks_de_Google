@@ -12,10 +12,10 @@
 <picture> <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">  </picture>
 <br>
 
- ### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExenAzbXk0cGplbjEwOWI0Zjl4NmdtaGR3Nm01czQ4bTVrbWJsd3Z0ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fY4gR00vf6tFQX1RYC/giphy.gif" width = 80px>  </picture> Tool_Google_dorks_12k
+ ### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXBzcWFzcXZsdGNhN29rNjF5Z2JkbWdnNW40NXU1NHR0Z3lxNXN0cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kFBpX9YNpVg7X7jSVx/giphy.gif" width = 80px>  </picture> Tool_Google_dorks_12k
 
 Repositorio con una colección extensa y categorizada de >12,000 Google Dorks pensada para investigación, análisis y pruebas en entornos controlados. Fácil de buscar, filtrar e integrar en tus pipelines y herramientas de reconocimiento.
-Advertencia: uso responsable y legal únicamente — no escanees infraestructuras sin autorización, canal Youtuve tools demo <p align="center"> <a href="https://www.youtube.com/@Aquiles369">.
+Advertencia: uso responsable y legal únicamente — no escanees infraestructuras sin autorización, canal Youtuve tools demo <p align="center"> <a href="https://www.youtube.com/@Aquiles369"><img alt="Youtubve"></a>.
 
 <br>
 
