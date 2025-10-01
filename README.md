@@ -14,12 +14,14 @@
 ### Tool_Google_dorks_12k
 
 Repositorio con una colección extensa y categorizada de >12,000 Google Dorks pensada para investigación, análisis y pruebas en entornos controlados. Fácil de buscar, filtrar e integrar en tus pipelines y herramientas de reconocimiento.
-Advertencia: uso responsable y legal únicamente — no escanees infraestructuras sin autorización, canal Youtuve tools demo <a href="https://www.youtube.com/@Aquiles369"><img alt="tools creada"/></a>.
+Advertencia: uso responsable y legal únicamente — no escanees infraestructuras sin autorización, canal Youtuve tools demo <a href="https://www.youtube.com/@Aquiles369"></a>.
 
 <br>
 <br>
 
-### <picture> <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2Jnd2Nrc293aDBtdHFpMnpyY25peXBvMjVpMTQ5MHcwZ2sxeHRoMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/zKsl6TMQVRpx1U04Ai/giphy.gif" width ="90" > </picture>  
+<p align="center">
+ <img  height="470rem" alt="GIF" src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2Jnd2Nrc293aDBtdHFpMnpyY25peXBvMjVpMTQ5MHcwZ2sxeHRoMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/zKsl6TMQVRpx1U04Ai/giphy.gif"/>
+</p>
 
 <br><br>
 
