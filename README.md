@@ -33,6 +33,10 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 • Colección: 12,000 dorks (formato web / dataset).<br><br>
 • Categorías: incluye 14 categorías principales (≈7k dorks) + 4 categorías personalizadas extraidas de informes/medium/bug-bounty, y más de 30 subcategorías en total.<br><br>
 • Formato: interfaz web local (HTML/JS) + export/import JSON. Toda la data se guarda en localStorage por defecto (offline, en tu máquina).<br><br>
+• Pasos a seguir:<br>
+1. Descarga el repositorio.<br>
+2. Abre el archivo `index.html` en Google Chrome (u otro navegador moderno).<br>
+3. Importa el archivo JSON: se cargarán todas las categorías y sus dorks.<br>
 **Nota: la herramienta sólo genera las URLs de consulta (dork → site:TARGET + DORK) — no automatiza explotación ni crawling avanzado. Usá un proxy y/o tu tooling (Burp, httpx, etc.) si necesitás más control.** <br><br>
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
