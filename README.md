@@ -15,11 +15,7 @@
  ### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXBzcWFzcXZsdGNhN29rNjF5Z2JkbWdnNW40NXU1NHR0Z3lxNXN0cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kFBpX9YNpVg7X7jSVx/giphy.gif" width = 80px>  </picture> Tool_Google_dorks_12k
 
 Repositorio con una colección extensa y categorizada de >12,000 Google Dorks pensada para investigación, análisis y pruebas en entornos controlados. Fácil de buscar, filtrar e integrar en tus pipelines y herramientas de reconocimiento.
-Advertencia: uso responsable y legal únicamente — no escanees infraestructuras sin autorización, canal <a href="https://www.youtube.com/@Aquiles369" target="_blank" rel="noopener">Youtube</a>  <a href="https://www.youtube.com/@Aquiles369" target="_blank" rel="noopener"
-   style="color: white; background: red; padding: 6px 12px; border-radius: 6px; text-decoration: none; font-weight: bold;">
-  Youtube
-</a>
- tools demo .
+Advertencia: uso responsable y legal únicamente — no escanees infraestructuras sin autorización, canal <a href="https://www.youtube.com/@Aquiles369" target="_blank" rel="noopener">Youtube</a> tools demo .
 
 <br>
 
