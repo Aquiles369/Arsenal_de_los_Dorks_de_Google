@@ -19,17 +19,20 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 <br>
 <br>
 
-- **Resumen rápido:**
+**Resumen rápido**
+<br>
+<br>
 
-• **Colección**: >12,000 dorks (formato web / dataset).
+• **Colección:** >12,000 dorks (formato web / dataset).
+<br>
+• **Categorías:** incluye 14 categorías principales (≈7k dorks) + 4 categorías personalizadas extraidas de informes/medium/bug-bounty, y más de 30 subcategorías en total.
+<br>
+• **Formato:** interfaz web local (HTML/JS) + export/import JSON. Toda la data se guarda en localStorage por defecto (offline, en tu máquina).
+<br>
+<br>
 
-• **Categorías**: incluye 14 categorías principales (≈7k dorks) + 4 categorías personalizadas extraidas de informes/medium/bug-bounty, y más de 30 subcategorías en total.
 
-• **Formato**: interfaz web local (HTML/JS) + export/import JSON. Toda la data se guarda en localStorage por defecto (offline, en tu máquina).
-
-• Licencias sugeridas: Código → MIT. Dataset (dorks) → CC0 (o la que elijas).
-
-• Características principales (presentación)
+**Características principales** 
 
 • Interfaz intuitiva para buscar, filtrar y seleccionar dorks por categoría, subcategoría o texto.
 
