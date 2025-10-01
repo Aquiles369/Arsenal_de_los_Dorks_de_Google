@@ -31,7 +31,7 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 ### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOG80ZGFkeXhmY3k1a3I0amM4d3c4dTVsYXJsdXN3YTdnM3lscmV3aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/QWLB90zujnfMUWEUBb/giphy.gif" width = 80px>  </picture> Resumen rápido
 <br><br>
 • Colección: 12,000 dorks (formato web / dataset).<br><br>
-• Categorías: incluye 14 categorías principales (≈7k dorks) + 4 categorías personalizadas extraidas de informes/medium/bug-bounty, y más de 30 subcategorías en total.<br><br>
+• Categorías: incluye más de 47 categorías en total (≈12k dorks) + categorías personalizadas extraidas de informes/medium/bug-bounty.<br><br>
 • Formato: interfaz web local (HTML/JS) + export/import JSON. Toda la data se guarda en localStorage por defecto (offline, en tu máquina).<br><br>
 • Pasos a seguir:<br>
 1. Descarga el repositorio.<br>
