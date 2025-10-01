@@ -10,7 +10,6 @@
 </p>
 
 <picture> <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">  </picture>
-<br>
 
  ### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXkzb2lnanpkZjRyNmZpNXBpbTZwa2R1ZzVnbHU5NTRpc283M3d6cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cHzz94qovyOVa/giphy.gif" width = 75px>  </picture> Arsenal de los Dorks de Google
 <br>
