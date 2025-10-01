@@ -20,10 +20,10 @@ Advertencia: uso responsable y legal únicamente — no escanees infraestructura
 <br>
 
 **Resumen rápido**
-<br>
-•Colección: 12,000 dorks (formato web / dataset).<br><br>
-•Categorías: incluye 14 categorías principales (≈7k dorks) + 4 categorías personalizadas extraidas de informes/medium/bug-bounty, y más de 30 subcategorías en total.<br><br>
-•Formato: interfaz web local (HTML/JS) + export/import JSON. Toda la data se guarda en localStorage por defecto (offline, en tu máquina).<br><br>
+<br><br>
+• Colección: 12,000 dorks (formato web / dataset).<br><br>
+• Categorías: incluye 14 categorías principales (≈7k dorks) + 4 categorías personalizadas extraidas de informes/medium/bug-bounty, y más de 30 subcategorías en total.<br><br>
+• Formato: interfaz web local (HTML/JS) + export/import JSON. Toda la data se guarda en localStorage por defecto (offline, en tu máquina).<br><br>
 **Nota: la herramienta sólo genera las URLs de consulta (dork → site:TARGET + DORK) — no automatiza explotación ni crawling avanzado. Usá un proxy y/o tu tooling (Burp, httpx, etc.) si necesitás más control.** <br><br>
 <br>
 <br>
