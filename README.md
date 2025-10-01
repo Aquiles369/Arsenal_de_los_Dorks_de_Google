@@ -68,10 +68,8 @@
 • También tiene la opción para copiar todos los dorks de la categoría.<br>
 
 • Export JSON con todas las notas y metadatos (listo para compartir o versionar).<br>
-<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture><br>
 <br>
-<br>
-
 
  ### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcnVkOW5hejU3YWwzenhmN3lxNm45d3Y4YTF0ZjNzODB6amx4MGl3ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/lN8r2PtfE9r9BqbNjD/giphy.gif" width = 70px>  </picture> Uso (modo web local)
 <br><br>
@@ -89,7 +87,8 @@
 - Pulsá Start para abrir/ejecutar los dorks seleccionados.<br>
 
 - Podés pausar / cancelar en cualquier momento.<br><br>
-<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture><br>
+<br>
 
 
 
