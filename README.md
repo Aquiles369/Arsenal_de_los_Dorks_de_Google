@@ -41,9 +41,6 @@
 **Nota: la herramienta sólo genera las URLs de consulta (dork → site:TARGET + DORK) — no automatiza explotación ni crawling avanzado. Usá un proxy y/o tu tooling (Burp, httpx, etc.) si necesitás más control.** <br><br>
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
-<br>
-
-
  ### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmdmaWV4eW9vanV6MW1sbDZhMm5jcWt4ZWZub3N1NGxreGtyNDJnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/H1MtdYI4wIZXFgbAjx/giphy.gif" width = 70px>  </picture> Características principales
 
 <br><br>
