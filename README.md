@@ -23,7 +23,7 @@
  <img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/2025-10-01-20-09-06.gif"/>
 </p>
 
-<br><br>
+<br>
 
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
