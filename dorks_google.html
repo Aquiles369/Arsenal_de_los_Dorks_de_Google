@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#0f1226">
+<title>Dorks OSINT — Google (by Aquiles)</title>
+<link rel="icon" href="assets/fav_Aquiles.png" type="image/x-icon">
+<style>
+  :root{
+    --bg:#000000; --card:#0a1142; --ink:#285d2d; --muted:#515eef; --line:rgba(0, 0, 0, 0.14);
+    --accent:#7c5cff; --accent-2:#e00000; --accent-3:#00e0c2;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;
+    background:
+      radial-gradient(1100px 720px at 80% -10%, #1f2350 0%, transparent 60%),
+      radial-gradient(900px 620px at -10% 110%, #1a1e45 0%, transparent 60%),
+      var(--bg);
+    color:var(--ink);
+  }
+  .wrap{width:min(1200px,100%); margin:0 auto; padding:16px; display:grid; gap:12px}
+  .head{
+    position:sticky; top:8px; z-index:20;
+    display:grid;
+    grid-template-columns:auto 1fr auto auto auto auto auto; /* +1 col por Delay */
+    gap:8px; align-items:center;
+    background:linear-gradient(180deg, rgba(22,26,56,.92), rgba(22,26,56,.66));
+    border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:10px 12px;
+    box-shadow:0 10px 24px rgba(0,0,0,.25);
+  }
+  h1{margin:0; font-size:18px; font-weight:900; letter-spacing:.2px}
+  .target{display:flex; gap:8px; align-items:center}
+  .search{width:100%; padding:8px 10px; border-radius:10px; border:1px solid var(--line);
+    background:rgba(255,255,255,.06); color:var(--ink); font-weight:800}
+  .searchWide{grid-column:1 / -1}
+
+  .btn{border:none; border-radius:10px; padding:6px 10px; font-weight:800; cursor:pointer;
+    background:linear-gradient(90deg, var(--accent), #e000c8); color:#0b0d1f}
+  .btn.ghost{background:transparent; color:var(--ink); border:1px solid var(--line)}
+  .btn.tiny{padding:4px 8px; border-radius:8px; font-size:12px}
+  .muted{color:var(--muted); font-size:12px}
+
+  .panel{background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+         border:1px solid rgba(255,255,255,.10); border-radius:14px; overflow:hidden}
+  .body{display:grid; gap:10px; padding:10px 12px}
+
+  .cat{border:1px solid rgba(255,255,255,.10); border-radius:12px; overflow:hidden; background:rgba(255,255,255,.03)}
+  .cat-head{display:grid; grid-template-columns:1fr auto; gap:8px; align-items:center; padding:10px 12px; background:rgba(255,255,255,.03); cursor:pointer}
+  .cat-left{display:flex; align-items:center; gap:8px}
+  .cat-name{font-weight:900}
+  .cat-count{font-size:12px; color:var(--muted); font-weight:800}
+  .tools{display:flex; gap:6px; flex-wrap:wrap}
+  .cat-body{display:grid; gap:8px; padding:10px 12px; border-top:1px dashed var(--line)}
+  .dork{display:grid; grid-template-columns:22px 1fr auto auto auto; gap:8px; align-items:center; padding:8px; border:1px solid rgba(255,255,255,.10); border-radius:10px}
+  .dork label{font-weight:700}
+  a.link{color:#9bb8ff; text-decoration:none}
+  a.link:hover{text-decoration:underline}
+
+  .noteBtn{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--line); background:transparent; color:var(--ink); padding:2px 8px; border-radius:999px; font-weight:800; cursor:pointer}
+  .note-dot{display:inline-block; width:8px; height:8px; border-radius:999px; background:var(--accent-2); box-shadow:0 0 6px rgba(255,0,0,.7)}
+
+  .modal{position:fixed; inset:0; display:none; place-items:center; background:rgba(0,0,0,.55); backdrop-filter: blur(3px); z-index:40}
+  .modal.open{display:grid}
+  .modal .box{background:var(--card); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:16px; width:min(760px,95%); margin-top:88px}
+  .modal textarea{width:100%; min-height:260px; resize:vertical; background:rgba(255,255,255,.06); color:var(--ink); border:1px solid rgba(255,255,255,.14); border-radius:10px; padding:10px}
+
+  .tip{position:absolute; z-index:60; background:#0f1336; color:var(--ink);
+       border:1px solid rgba(255,255,255,.14); border-radius:10px; padding:10px 12px;
+       max-width:min(520px, 90vw); box-shadow:0 10px 24px rgba(0,0,0,.35)}
+  .tip h4{margin:0 0 6px 0; font-size:12px; color:#b7c1ff; letter-spacing:.2px}
+  .tip p{margin:0; white-space:pre-wrap; line-height:1.35}
+
+  .toast{position:fixed; left:50%; transform:translateX(-50%); bottom:20px; background:#101436; color:var(--ink);
+         border:1px solid rgba(255,255,255,.14); border-radius:10px; padding:10px 14px; box-shadow:0 8px 20px rgba(0,0,0,.35); opacity:0; pointer-events:none; transition:opacity .25s}
+  .toast.show{opacity:1}
+
+  /* Controles Delay */
+  .delayCtl{display:flex; align-items:center; gap:6px; padding:2px 8px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04)}
+  .delayCtl label{font-size:12px; color:var(--muted); font-weight:800}
+  .mini{width:64px; padding:4px 6px; border-radius:8px; border:1px solid var(--line); background:rgba(255,255,255,.06); color:var(--ink); font-weight:800; text-align:center}
+  .box h3{margin:0 0 6px 0}
+  .badge{display:inline-block; padding:2px 8px; border-radius:999px; border:1px solid var(--line); font-size:12px; color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1>🔎 Dorks OSINT — Google</h1>
+    <input id="q" class="search searchWide" placeholder="Buscar (cat: para categorías, dork: para dorks, o texto libre)…"/>
+
+    <div class="target">
+      <strong>Target:</strong>
+      <input id="dTarget" class="search" placeholder="pepe.com o https://pepe.com"/>
+    </div>
+
+    <!-- NUEVO: Controles de Delay -->
+    <div class="delayCtl" title="Delay entre aperturas. Si dejas vacío, usa default (3s base + 2s jitter).">
+      <label>Delay</label>
+      <input id="baseDelay" class="mini" type="number" step="0.5" min="0" placeholder="3" aria-label="Delay base en segundos">
+      <span class="muted">±</span>
+      <input id="jitterDelay" class="mini" type="number" step="0.5" min="0" placeholder="2" aria-label="Jitter en segundos">
+      <span class="muted">s</span>
+    </div>
+
+    <button id="addCat" class="btn tiny ghost">+ Categoría</button>
+    <button id="expJSON" class="btn tiny ghost">Exportar</button>
+    <button id="impJSON" class="btn tiny">Importar</button>
+    <input id="file" type="file" accept=".json" style="display:none"/>
+    <button id="reset" class="btn tiny">Reiniciar</button>
+  </div>
+
+  <div class="panel">
+    <div id="list" class="body"></div>
+  </div>
+</div>
+
+<div id="toast" class="toast">Copiado al portapapeles</div>
+
+<!-- Modal Notas -->
+<div id="modal" class="modal" role="dialog" aria-modal="true">
+  <div class="box">
+    <h2 id="mTitle">📝 Notas</h2>
+    <div id="mMeta" class="muted">Última edición: —</div>
+    <p class="muted" style="margin:6px 0 10px 0">Ctrl/Cmd + S guarda — Esc cierra.</p>
+    <textarea id="mArea"></textarea>
+    <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:10px">
+      <button id="mSave" class="btn">Guardar (Ctrl+S)</button>
+      <button id="mClose" class="btn ghost">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Carga Masiva de Dorks -->
+<div id="bulkModal" class="modal" role="dialog" aria-modal="true">
+  <div class="box">
+    <h3>📥 Agregar varios dorks</h3>
+    <p class="muted" style="margin:6px 0 10px 0">
+      Pegá 1 dork por línea (ej.: <code>site:{TARGET} "TLS Web Server Authentication"</code>).<br>
+      Sugerido: 20–50 líneas. Vacíos y duplicados se ignoran.
+    </p>
+    <div class="badge"><span id="bulkCount">0</span> líneas</div>
+    <textarea id="bulkArea" placeholder='site:{TARGET} "TLS Web Server Authentication"\nsite:{TARGET} inurl:admin\nsite:{TARGET} ext:json "api_key"'></textarea>
+    <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:10px">
+      <button id="bulkAdd" class="btn">Agregar</button>
+      <button id="bulkClose" class="btn ghost">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const $=s=>document.querySelector(s);
+  const uid=()=>Math.random().toString(36).slice(2,9);
+  const now=()=>new Date().toLocaleString();
+  const LS='aquiles_google_dorks_v1';
+
+  const escapeHtml=s=>(s||'').replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+  const toast=(t='Copiado al portapapeles')=>{ const el=$("#toast"); el.textContent=t; el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),1300); };
+
+  function hostOf(t){
+    t=(t||'').trim(); if(!t) return '';
+    try{ const u=new URL(t.includes('://')?t:`https://${t}`); return u.hostname; }
+    catch{ return t.replace(/^https?:\/\//,'').replace(/\/.*$/,''); }
+  }
+  const gUrl=q=>'https://www.google.com/search?q='+encodeURIComponent(q);
+
+  /* ===== Modelo ===== */
+  function D(q){ return { id:uid(), text:q, note:'', hasNote:false, done:false, lastEdit:'' }; }
+  function Cat(name, arr){ return { id:uid(), name, open: true, note:'', hasNote:false, lastEdit:'', dorks:arr.map(D) }; }
+
+  // Defaults de delay
+  const DEFAULT_DELAY = { base: 3, jitter: 2 }; // segundos
+
+  let state={ target:'', cats:[], settings:{ base: DEFAULT_DELAY.base, jitter: DEFAULT_DELAY.jitter } };
+
+  function save(){ localStorage.setItem(LS, JSON.stringify(state)); }
+  function load(){
+    const raw=localStorage.getItem(LS);
+    if(raw){ try{ state=JSON.parse(raw)||state; }catch{} }
+    // migraciones/normalización
+    state.settings = state.settings || { base: DEFAULT_DELAY.base, jitter: DEFAULT_DELAY.jitter };
+    (state.cats||[]).forEach(c=>{
+      c.note = c.note||''; c.hasNote=!!c.note; c.lastEdit=c.lastEdit||'';
+      (c.dorks||[]).forEach(d=>{ d.note=d.note||''; d.hasNote=!!d.note; d.lastEdit=d.lastEdit||''; });
+    });
+    if(!state.cats.length){ state={ target:'', cats:defaults('{TARGET}'), settings:{...DEFAULT_DELAY} }; save(); }
+  }
+
+  /* ===== Defaults (Google-only) ===== */
+  function defaults(T){
+    const s='site:'+T+' ';
+    return [
+      Cat('Información sensible', [
+        s+'("password" OR "credential" OR "secret") -github',
+        s+'intext:"api_key" OR intext:"access_key"',
+        s+'inurl:config ext:json OR ext:yaml OR ext:yml',
+        s+'ext:env '+s, s+'"BEGIN RSA PRIVATE KEY" '+s,
+        s+'intext:"Authorization: Bearer"', s+'ext:pcap OR ext:pcapng '+s,
+        s+'ext:txt intext:"token="', s+'ext:log intext:"exception"',
+        s+'intitle:"index of" "id_rsa"', s+'ext:bak OR ext:old OR ext:backup '+s,
+        s+'ext:sql intext:"INSERT INTO"', s+'ext:ini intext:"pwd="',
+        s+'ext:conf "aws_access_key_id"', s+'ext:key OR ext:pem '+s,
+        s+'ext:db OR ext:sqlite '+s, s+'intext:"x-api-key" '+s,
+        s+'intext:"client_secret" '+s, s+'intext:"basic YW" '+s
+      ]),
+      Cat('Login / Auth', [
+        s+'inurl:login OR inurl:signin OR inurl:auth',
+        s+'intitle:"Two-Factor" OR intitle:"MFA" -docs',
+        s+'inurl:reset intext:"password"', s+'inurl:forgot intext:"email"',
+        s+'inurl:oauth OR inurl:authorize', s+'inurl:sso OR "single sign-on"',
+        s+'inurl:session intext:"token"', s+'"remember me" '+s,
+        s+'inurl:callback intext:"code="', s+'intext:"Sign in with" '+s,
+        s+'intitle:"login" '+s, s+'ext:json intext:"refresh_token"',
+        s+'inurl:redirect_uri '+s, s+'intext:"OpenID" '+s,
+        s+'inurl:jwt OR intext:"jwt"', s+'inurl:auth intext:"bearer"',
+        s+'"Forgot your password" '+s, s+'"Account locked" '+s
+      ]),
+      Cat('Admin / Backoffice', [
+        s+'inurl:admin OR inurl:backend OR inurl:dashboard',
+        s+'intitle:"Admin Panel"', '"phpMyAdmin" '+s, '"Grafana" '+s, '"Kibana" '+s,
+        '"Jenkins" '+s, '"SonarQube" '+s, 'inurl:wp-admin '+s, 'intitle:"Index of /admin"',
+        s+'inurl:manage OR inurl:cpanel', '"Backoffice" '+s, '"Superset" '+s,
+        '"Airflow" '+s, '"Prometheus" '+s, '"Traefik" dashboard '+s,
+        '"MinIO Browser" '+s, '"Sentry" login '+s, '"Keycloak" '+s
+      ]),
+      Cat('Indexación / Listados', [
+        s+'intitle:"index of" -github', '"Parent Directory" '+s, '"Directory Listing" '+s,
+        s+'intitle:"Index of /backup"', s+'intitle:"Index of /logs"', s+'intitle:"Index of /config"',
+        s+'intitle:"Index of /db"', s+'intext:"To Parent Directory" '+s,
+        s+'intitle:"Index of /uploads"', s+'intitle:"Index of /private"',
+        s+'intitle:"Index of /.git"', s+'"index of" ext:sql '+s,
+        s+'"index of" ext:env '+s, s+'"index of" ext:pem '+s, s+'"index of" ext:json '+s,
+        s+'"index of" ext:log '+s
+      ]),
+      Cat('Config / ENV', [
+        s+'ext:env "APP_ENV" OR "DB_PASSWORD"', s+'ext:yaml OR ext:yml "password"',
+        s+'ext:properties "jdbc:"', s+'ext:conf "passwd" OR "password"',
+        s+'ext:ini "pwd="', s+'ext:xml "secret"', s+'ext:toml "token"',
+        s+'ext:cfg "auth"', s+'ext:cnf "mysql"', s+'ext:json "config" "key"',
+        s+'inurl:.well-known '+s, s+'inurl:config '+s, '"DEFAULT_PASSWORD" '+s,
+        '"DB_HOST" '+s, '"API_SECRET" '+s, '"SENTRY_DSN" '+s, '"STRIPE_SECRET" '+s
+      ]),
+      Cat('Backups', [
+        s+'ext:bak OR ext:old OR ext:backup', s+'ext:zip OR ext:rar OR ext:7z '+s,
+        s+'ext:tar OR ext:gz '+s, s+'inurl:backup '+s, '"database backup" '+s,
+        '"full backup" '+s, '"dump" ext:sql '+s, 'intitle:"Index of /backup"',
+        '"snapshot" '+s, '"old" ext:sql '+s, '"copy" ext:sql '+s,
+        '"backup" ext:json '+s, '"archive" '+s, 'ext:bkf '+s, 'ext:tar.gz '+s
+      ]),
+      Cat('Logs', [
+        s+'ext:log "error"', s+'ext:log "exception"', s+'ext:log "trace"',
+        s+'ext:log "stack"', s+'ext:log "authentication"', s+'ext:log "token"',
+        s+'ext:log "WARN"', s+'ext:log "DEBUG"', s+'ext:log "INFO" "password"',
+        'intitle:"Index of /logs" '+s, s+'ext:txt "stack" ', s+'ext:csv "log" ',
+        s+'ext:ndjson ', s+'ext:log "Unhandled" ', s+'ext:log "panic" '
+      ]),
+      Cat('Git / SVN', [
+        s+'inurl:.git OR intitle:".git"', s+'inurl:.git/config', s+'inurl:.git/HEAD',
+        'intitle:"Index of /.git" '+s, s+'inurl:.svn ', 'intitle:"Index of /.svn" '+s,
+        s+'inurl:.hg ', 'intitle:"Index of /.hg" '+s, s+'ext:gitmodules ',
+        s+'ext:patch ', s+'ext:diff ', s+'ext:gitconfig ', s+'"GIT_SSH" ',
+        s+'intext:"<<<<<<< HEAD" ', s+'ext:orig ', s+'ext:rej '
+      ]),
+      Cat('Bases de datos', [
+        s+'ext:sql "INSERT INTO"', s+'ext:sql "CREATE TABLE"', s+'ext:db OR ext:sqlite',
+        s+'ext:mdb OR ext:accdb ', s+'ext:dump OR "mysqldump" ', s+'ext:sql.gz ',
+        s+'ext:json "mongodb" ', s+'ext:bson ', s+'ext:conf "postgresql" ',
+        s+'ext:cnf "mysql" ', s+'"connectionString" ', s+'"jdbc:" ', s+'ext:dbf ', s+'ext:sqlite3 '
+      ]),
+      Cat('APIs / Swagger / GraphQL', [
+        s+'inurl:/swagger OR "swagger-ui"', s+'inurl:/openapi OR ext:json "openapi"',
+        s+'inurl:/v2/api-docs ', s+'inurl:/api-docs ', 'intitle:"GraphQL Playground" '+s,
+        s+'inurl:/graphiql ', s+'intitle:"Swagger UI" ', s+'ext:yaml "openapi: 3" ',
+        s+'inurl:/redoc ', s+'intext:"bearerAuth" ', s+'intext:"servers:" ',
+        s+'intext:"mutation" ', s+'intext:"query" ', s+'inurl:/graphql '
+      ]),
+      Cat('Cloud / Buckets', [
+        s+'inurl:s3.amazonaws.com', s+'intext:"AmazonS3" ', s+'inurl:storage.googleapis.com',
+        s+'inurl:blob.core.windows.net', s+'"ListBucketResult" ', s+'intext:"<Key>" ext:xml ',
+        'intitle:"Index of" "bucket" '+s, '"X-Amz-Error" '+s, '"AccessDenied" '+s,
+        s+'inurl:/minio/ ', '"MinIO Browser" '+s, s+'inurl:cloudfront.net ', s+'"public-read" '
+      ]),
+      Cat('Documentos / Archivos', [
+        s+'ext:pdf "confidential" OR "internal"', s+'ext:xls OR ext:xlsx "password"',
+        s+'ext:doc OR ext:docx "confidential"', s+'ext:ppt OR ext:pptx "internal"',
+        s+'ext:csv "email" "password"', s+'ext:txt "todo" OR "notes"', s+'ext:md "password" ',
+        s+'ext:json "secret" ', s+'ext:key ', s+'ext:pem ', s+'ext:crt ', s+'ext:pcap ', s+'ext:har '
+      ]),
+      Cat('Errores / Stacktraces', [
+        s+'intext:"Stack trace"', s+'intext:"NullPointerException"', s+'intext:"TypeError:"',
+        s+'intext:"ReferenceError:"', 'intext:"Traceback (most recent call last)" '+s,
+        s+'intext:"UnhandledPromiseRejection"', s+'intext:"SQLSTATE" ',
+        s+'intext:"PSQLException" ', s+'intext:"KeyError" ', 'intitle:"Whitelabel Error Page" '+s
+      ]),
+      Cat('Robots / Sitemaps', [
+        s+'inurl:/robots.txt', s+'inurl:/sitemap.xml', 'intitle:"Index of /sitemaps" '+s,
+        s+'inurl:/sitemap_index.xml', s+'inurl:/sitemap*.xml ', s+'"Disallow:" ',
+        s+'"User-agent:" ', s+'"Sitemap:" ', s+'intext:"/private" "Disallow" ', s+'inurl:/humans.txt ',
+        s+'inurl:/security.txt ', s+'inurl:/.well-known/security.txt '
+      ]),
+      Cat('Dashboards / Monitoring', [
+        '"Grafana" login '+s, '"Kibana" login '+s, '"Prometheus" targets '+s, '"SonarQube" login '+s,
+        '"Sentry" projects '+s, '"Jenkins" build '+s, '"Airflow" DAGs '+s, '"Superset" login '+s,
+        '"Graylog" login '+s, '"Zabbix" login '+s, '"Traefik" dashboard '+s, '"Harbor" registry '+s
+      ]),
+      Cat('Subdominios / Recon', [
+        'site:*.'+T, 'site:*.*.'+T, s+'-www', s+'-blog -help -support',
+        s+'inurl:dev OR inurl:staging OR inurl:test', s+'inurl:beta OR inurl:qa',
+        s+'inurl:old OR inurl:legacy', s+'inurl:api OR inurl:api-v1',
+        s+'inurl:cdn OR inurl:static', s+'"X-Powered-By" ', s+'"Server:" ', s+'"Set-Cookie" '
+      ]),
+      Cat('Frontend / JS', [
+        s+'ext:js "apiKey" OR "token"', s+'ext:map ', s+'ext:js "Authorization"',
+        s+'ext:js "Bearer"', s+'ext:js "csrf"', s+'ext:js "localStorage"', s+'ext:js "fetch(" ',
+        s+'ext:js "axios(" ', s+'ext:js "WebSocket" ', s+'ext:js "graphql" ', s+'ext:js "sentry" '
+      ])
+    ];
+  }
+
+  /* ===== Tooltip ===== */
+  let tipEl=null;
+  function tipHtml(title, content, last){
+    const safeText = escapeHtml(content||'—');
+    const safeLast = escapeHtml(last||'—');
+    return `<h4>${escapeHtml(title)} • Última edición: ${safeLast}</h4><p>${safeText}</p>`;
+  }
+  function showTip(anchor, html){
+    hideTip();
+    tipEl=document.createElement('div'); tipEl.className='tip'; tipEl.innerHTML=html;
+    document.body.appendChild(tipEl);
+    const r=anchor.getBoundingClientRect();
+    const top=r.bottom+window.scrollY+8;
+    let left=r.left+window.scrollX;
+    const maxLeft=window.scrollX+document.documentElement.clientWidth - tipEl.offsetWidth - 12;
+    if(left>maxLeft) left=maxLeft;
+    tipEl.style.top=top+'px'; tipEl.style.left=left+'px';
+    window.addEventListener('scroll', hideTip, {once:true});
+  }
+  function hideTip(){ if(tipEl){ tipEl.remove(); tipEl=null; } }
+
+  /* ===== Modal Notas ===== */
+  const $modal=$('#modal'), $mArea=$('#mArea'), $mClose=$('#mClose'), $mSave=$('#mSave'), $mTitle=$('#mTitle'), $mMeta=$('#mMeta');
+  let noteCtx=null;
+  function openNotes(ctx){
+    noteCtx=ctx;
+    $mTitle.textContent = '📝 Notas — ' + (ctx.title||'');
+    $mArea.value = ctx.ref.note||'';
+    $mMeta.textContent='Última edición: '+(ctx.ref.lastEdit||'—');
+    $modal.classList.add('open'); $mArea.focus();
+  }
+  function closeNotes(){ $modal.classList.remove('open'); noteCtx=null; }
+  function saveNotes(){
+    if(!noteCtx) return;
+    noteCtx.ref.note = $mArea.value.trim();
+    noteCtx.ref.hasNote = !!noteCtx.ref.note;
+    noteCtx.ref.lastEdit = now();
+    save(); closeNotes(); render();
+  }
+  $mClose.addEventListener('click', closeNotes);
+  $mSave.addEventListener('click', saveNotes);
+  window.addEventListener('keydown', (e)=>{
+    if($modal.classList.contains('open')){
+      if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='s'){ e.preventDefault(); saveNotes(); }
+      if(e.key==='Escape'){ e.preventDefault(); closeNotes(); }
+    }
+  });
+
+  /* ===== Modal Bulk ===== */
+  const $bulk=$('#bulkModal'), $bArea=$('#bulkArea'), $bAdd=$('#bulkAdd'), $bClose=$('#bulkClose'), $bCount=$('#bulkCount');
+  let bulkCat=null;
+  function openBulk(cat){
+    bulkCat=cat; $bArea.value=''; $bCount.textContent='0';
+    $bulk.classList.add('open'); $bArea.focus();
+  }
+  function closeBulk(){ $bulk.classList.remove('open'); bulkCat=null; }
+  function bulkLines(){
+    const raw=$bArea.value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+    const seen=new Set(); const out=[];
+    for(const line of raw){
+      const k=line.toLowerCase();
+      if(!seen.has(k)){ seen.add(k); out.push(line); }
+    }
+    return out;
+  }
+  $bArea.addEventListener('input', ()=>{ $bCount.textContent = String(bulkLines().length); });
+  $bAdd.addEventListener('click', ()=>{
+    if(!bulkCat) return;
+    const lines=bulkLines();
+    if(!lines.length){ toast('No hay líneas válidas'); return; }
+    if(lines.length>200 && !confirm(`Vas a agregar ${lines.length} dorks. ¿Continuar?`)) return;
+    const items=lines.map(D);
+    bulkCat.dorks = items.concat(bulkCat.dorks);
+    bulkCat.open = true;
+    bulkCat.lastEdit = now();
+    save(); closeBulk(); render();
+    toast(`Agregados ${items.length} dorks`);
+  });
+  $bClose.addEventListener('click', closeBulk);
+  window.addEventListener('keydown', (e)=>{
+    if($bulk.classList.contains('open')){
+      if(e.key==='Escape'){ e.preventDefault(); closeBulk(); }
+      if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='Enter'){ e.preventDefault(); $bAdd.click(); }
+    }
+  });
+
+  /* ===== Helpers Delay ===== */
+  function getDelaySettings(){
+    // toma de state, validando; si NaN/invalid → defaults
+    let base = Number(state.settings?.base);
+    let jitter = Number(state.settings?.jitter);
+    if(!Number.isFinite(base) || base<0) base = DEFAULT_DELAY.base;
+    if(!Number.isFinite(jitter) || jitter<0) jitter = DEFAULT_DELAY.jitter;
+    // cap suave por seguridad
+    if(base>120) base=120;         // 2 minutos
+    if(jitter>120) jitter=120;
+    return { base, jitter };
+  }
+
+  function bindDelayInputs(){
+    const $base=$("#baseDelay"), $jit=$("#jitterDelay");
+    // Mostrar valores si son válidos; si no, dejar vacío para implicar default
+    const s = state.settings||{};
+    if(Number.isFinite(Number(s.base))) $base.value = s.base;
+    if(Number.isFinite(Number(s.jitter))) $jit.value = s.jitter;
+
+    const onChange = ()=>{
+      const b = parseFloat($base.value);
+      const j = parseFloat($jit.value);
+      // Guardamos lo que haya; si NaN, persistimos como undefined para que aplique default al usar
+      state.settings = {
+        base: Number.isFinite(b) ? b : undefined,
+        jitter: Number.isFinite(j) ? j : undefined
+      };
+      save();
+    };
+    $base.addEventListener('change', onChange);
+    $jit.addEventListener('change', onChange);
+  }
+
+  /* ===== Render ===== */
+  function render(){
+    $('#dTarget').value=state.target||'';
+    const qraw = ($('#q')?.value || '').trim();
+    const list=$('#list'); list.innerHTML='';
+
+    // asegurar inputs delay enlazados
+    bindDelayInputs();
+
+    let mode='all';
+    let q=qraw.toLowerCase();
+    if(q.startsWith('cat:')||q.startsWith('c:')){ mode='cat'; q=q.replace(/^c(?:at)?:/,'').trim(); }
+    else if(q.startsWith('dork:')||q.startsWith('d:')){ mode='dork'; q=q.replace(/^d(?:ork)?:/,'').trim(); }
+
+    state.cats.forEach(cat=>{
+      const box=document.createElement('div'); box.className='cat';
+
+      const catHaystack=(cat.name+' '+(cat.note||'')).toLowerCase();
+      const catMatch = !q || (mode!=='dork' && catHaystack.includes(q));
+
+      const dorkMatches = (cat.dorks||[]).filter(d=>{
+        if(!q) return true;
+        if(mode==='cat') return false;
+        const text=(d.text+' '+(d.note||'')).toLowerCase();
+        return text.includes(q);
+      });
+
+      if(q && !catMatch && dorkMatches.length===0) return;
+
+      const head=document.createElement('div'); head.className='cat-head';
+      const hitBadge = q ? ` <span class="muted">• ${mode==='cat' ? (catMatch?1:0) : dorkMatches.length} coincidencias</span>` : '';
+      head.innerHTML = `
+        <div class="cat-left">
+          <div class="cat-name">${cat.open?'▾':'▸'} ${escapeHtml(cat.name)}</div>
+          <span class="cat-count">${cat.dorks.length} dorks${hitBadge}</span>
+          <span class="cat-note-badge" title="Nota">${cat.hasNote?'<span class="note-dot"></span>':''}</span>
+        </div>
+        <div class="tools">
+          <button class="btn tiny ghost noteBtn catNote">📝 Nota</button>
+          <button class="btn tiny ghost selAll">Seleccionar</button>
+          <button class="btn tiny ghost deselAll">Deseleccionar</button>
+          <button class="btn tiny ghost addD">+ Dork</button>
+          <button class="btn tiny ghost copy">Copiar seleccionados</button>
+          <button class="btn tiny ghost open">Abrir seleccionados</button>
+          <button class="btn tiny ghost toggle">${cat.open?'Ocultar':'Mostrar'}</button>
+          <button class="btn tiny" data-del="1">Borrar categoría</button>
+        </div>`;
+      head.addEventListener('click',e=>{ if(e.target.closest('.tools'))return; cat.open=!cat.open; save(); render(); });
+      head.querySelector('.toggle').addEventListener('click',e=>{ e.stopPropagation(); cat.open=!cat.open; save(); render(); });
+
+      // + Dork (uno o varios)
+      head.querySelector('.addD').addEventListener('click',e=>{
+        e.stopPropagation();
+        const multi = confirm('¿Agregar varios dorks?\nAceptar = varios (abre modal)\nCancelar = uno solo');
+        if(multi) openBulk(cat);
+        else addSingleDork(cat);
+      });
+
+      // Seleccionar N (20/50/100/TODOS)
+      head.querySelector('.selAll').addEventListener('click',e=>{
+        e.stopPropagation();
+        const choice = prompt('¿Cuántos marcar? 20 / 50 / 100 / TODOS', '50');
+        let n=0;
+        if(!choice) return;
+        const c = choice.trim().toLowerCase();
+        if(c==='todos') n=Infinity;
+        else{
+          const num=parseInt(c,10);
+          if(Number.isFinite(num)&&num>0) n=num; else{ toast('Valor inválido'); return; }
+        }
+        let i=0;
+        cat.dorks.forEach(d=>{ d.done = (i<n); i++; });
+        save(); render();
+      });
+
+      // Deseleccionar todos
+      head.querySelector('.deselAll').addEventListener('click',e=>{
+        e.stopPropagation();
+        cat.dorks.forEach(d=>d.done=false);
+        save(); render();
+      });
+
+      // Abrir con delay en cola (usa settings configurables)
+      head.querySelector('.open').addEventListener('click',e=>{
+        e.stopPropagation(); openSelectedStaggered(cat);
+      });
+
+      head.querySelector('.copy').addEventListener('click',e=>{ e.stopPropagation(); copySelected(cat); });
+      head.querySelector('[data-del]').addEventListener('click',e=>{
+        e.stopPropagation();
+        if(confirm(`¿Eliminar categoría "${cat.name}"?`)){
+          const i=state.cats.findIndex(x=>x.id===cat.id); if(i>-1){ state.cats.splice(i,1); save(); render(); }
+        }
+      });
+
+      const openCatNote = (e)=>{ e.stopPropagation(); openNotes({type:'cat', ref:cat, title:`Categoría: ${cat.name}`}); };
+      head.querySelector('.catNote').addEventListener('click', openCatNote);
+      head.querySelector('.catNote').addEventListener('mouseenter',(e)=>{ if(!cat.hasNote) return; showTip(e.currentTarget, tipHtml(`Nota — ${cat.name}`, cat.note, cat.lastEdit)); });
+      head.querySelector('.catNote').addEventListener('mouseleave', hideTip);
+
+      const catBadge=head.querySelector('.cat-note-badge');
+      catBadge.addEventListener('mouseenter',(e)=>{ if(!cat.hasNote) return; showTip(e.currentTarget, tipHtml(`Nota — ${cat.name}`, cat.note, cat.lastEdit)); });
+      catBadge.addEventListener('mouseleave', hideTip);
+
+      const body=document.createElement('div'); body.className='cat-body'; body.style.display=cat.open?'grid':'none';
+
+      const host=hostOf(state.target||'{TARGET}');
+      const rows = q ? (mode==='cat' ? cat.dorks : dorkMatches) : cat.dorks;
+
+      rows.forEach(d=>{
+        const row=document.createElement('div'); row.className='dork';
+        const qFinal=d.text.replaceAll('{TARGET}',host);
+        row.innerHTML = `
+          <input type="checkbox" class="ok" ${d.done?'checked':''}>
+          <label title="${escapeHtml(d.text)}">${escapeHtml(d.text)}</label>
+          <div style="display:flex; gap:6px; align-items:center;">
+            <button class="noteBtn dorkNote">📝 Nota ${d.hasNote?'<span class="note-dot"></span>':''}</button>
+            <a class="btn tiny ghost" href="${gUrl(qFinal)}" target="_blank" rel="noopener">Abrir</a>
+          </div>
+          <div style="display:flex; gap:6px">
+            <button class="btn tiny ghost edit">✎</button>
+            <button class="btn tiny ghost del">🗑</button>
+          </div>`;
+        row.querySelector('.ok').addEventListener('change',e=>{ d.done=e.target.checked; save(); });
+        row.querySelector('.edit').addEventListener('click',()=>{ const nq=prompt('Editar dork (usa {TARGET}):', d.text); if(nq!==null){ d.text=nq.trim()||d.text; d.lastEdit=now(); save(); render(); }});
+        row.querySelector('.del').addEventListener('click',()=>{ const i=cat.dorks.findIndex(x=>x.id===d.id); if(i>-1){ cat.dorks.splice(i,1); save(); render(); }});
+        const dn=row.querySelector('.dorkNote');
+        dn.addEventListener('click', ()=> openNotes({type:'dork', ref:d, title:'Dork'}));
+        dn.addEventListener('mouseenter', (e)=>{ if(!d.hasNote) return; showTip(e.currentTarget, tipHtml('Nota — Dork', d.note, d.lastEdit)); });
+        dn.addEventListener('mouseleave', hideTip);
+
+        body.appendChild(row);
+      });
+
+      box.appendChild(head); box.appendChild(body); list.appendChild(box);
+    });
+  }
+
+  /* ===== Actions ===== */
+  function addSingleDork(cat){
+    const q=prompt('Nuevo dork (usa {TARGET}):','site:{TARGET} inurl:admin');
+    if(!q) return;
+    const v=q.trim();
+    if(!v) return;
+    cat.dorks.unshift(D(v)); cat.open=true; cat.lastEdit=now(); save(); render();
+  }
+
+  // Apertura en cola con delay configurable (default 3s base + 0–2s jitter)
+  async function openSelectedStaggered(cat){
+    const host=hostOf(state.target||'{TARGET}');
+    const selected = cat.dorks.filter(d=>d.done);
+    if(!selected.length){ toast('Nada seleccionado'); return; }
+
+    const { base, jitter } = getDelaySettings(); // segundos
+    toast(`Abriendo ${selected.length} dork(s) con delay ~${base}s ± ${jitter}s…`);
+
+    for (const d of selected){
+      const url = gUrl(d.text.replaceAll('{TARGET}',host));
+      const delayMs = Math.round((base + Math.random()*jitter) * 1000);
+      await new Promise(res=>setTimeout(res, delayMs));
+      window.open(url,'_blank');
+    }
+    toast('Cola de apertura finalizada');
+  }
+
+  async function copySelected(cat){
+    const host=hostOf(state.target||'{TARGET}');
+    const lines=cat.dorks.filter(d=>d.done).map(d=>gUrl(d.text.replaceAll('{TARGET}',host)));
+    if(!lines.length){ toast('Nada seleccionado'); return; }
+    await navigator.clipboard.writeText(lines.join('\n'));
+    toast(`Copiado ${lines.length} URL(s)`);
+  }
+
+  /* ===== Toolbar ===== */
+  $('#q').addEventListener('input', render);
+  $('#dTarget').addEventListener('change',e=>{ state.target=e.target.value.trim(); save(); render(); });
+  $('#addCat').addEventListener('click',()=>{
+    const name=prompt('Nombre de la categoría:','Nueva categoría');
+    if(!name) return;
+    state.cats.unshift(Cat(name,[ 'site:{TARGET}' ]));
+    save(); render();
+  });
+  $('#reset').addEventListener('click',()=>{
+    if(!confirm('¿Restaurar dorks por defecto?')) return;
+    state.cats=defaults(state.target?hostOf(state.target):'{TARGET}');
+    save(); render();
+  });
+  $('#expJSON').addEventListener('click',()=>{
+    const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='dorks_google.json'; a.click();
+  });
+  $('#impJSON').addEventListener('click',()=>$('#file').click());
+  $('#file').addEventListener('change', async (e)=>{
+    const f=e.target.files[0]; if(!f) return;
+    try{
+      const txt=await f.text(); const obj=JSON.parse(txt);
+      if(obj && obj.cats){ state=obj; save(); render(); }
+      else alert('JSON inválido');
+    }catch{ alert('JSON inválido'); }
+    e.target.value='';
+  });
+
+  /* ===== Init ===== */
+  load(); render();
+})();
+</script>
+</body>
+</html>
