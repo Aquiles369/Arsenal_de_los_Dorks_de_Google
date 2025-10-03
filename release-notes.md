@@ -1,0 +1,88 @@
+# Release Notes — Google Dorks Arsenal
+
+**Repositorio con una colección extensa y categorizada de (12,000 Google Dorks)** pensada para investigación, análisis y pruebas en entornos controlados. Fácil de buscar, filtrar e integrar en tus pipelines y herramientas de reconocimiento.  
+**Advertencia:** uso responsable y legal únicamente — no escanees infraestructuras sin autorización.
+
+## Resumen rápido
+
+• **Colección:** 12,000 dorks (formato web / dataset).
+
+• **Categorías:** incluye más de 47 categorías en total (≈12k dorks) + categorías personalizadas extraídas de informes/medium/bug-bounty.
+
+• **Formato:** interfaz web local (HTML/JS) + export/import JSON. Toda la data se guarda en localStorage por defecto (offline, en tu máquina).
+
+## Pasos a seguir:
+
+1. Descarga el repositorio.  
+2. Abre el archivo `index.html` en Google Chrome.  
+3. Importa el archivo JSON: se cargarán todas las categorías y sus dorks.
+
+**Nota:** la herramienta sólo genera las URLs de consulta (dork → `site:TARGET + DORK`) — no automatiza explotación ni crawling avanzado. Usá un proxy y/o tu tooling (Burp, httpx, etc.) si necesitás más control.
+
+---
+
+## Características principales
+
+• Interfaz intuitiva para buscar, filtrar y seleccionar dorks por categoría, subcategoría o texto.
+
+• Selector de objetivo (target) simple: ponés el dominio/host y elegís cuántos dorks lanzar y el intervalo entre requests (rate control).
+
+• Batch control: podés seleccionar abrir/executar 20 / 50 / N dorks a la vez, o deseleccionar individualmente.
+
+• Gestión completa: crear, editar o eliminar dorks individualmente; agregar categorías nuevas; borrar categorías completas.
+
+• Importación/Exportación: cargar/guardar todo en JSON (importá un JSON y la app recarga con tus dorks, notas y categorías).
+
+• Modo de edición masiva: pegar 1 dork por línea o cientos a la vez para añadir rápidamente.
+
+• Notas: podés añadir notas a cada categoría y a cada dork. Las notas se guardan con Ctrl+S (o botón guardar).
+
+• UI → cuando un dork/categoría tiene nota, se muestra un círculo rojo indicador; hover muestra contenido de la nota sin necesidad de abrir.
+
+• Buscador por categoría y por contenido (fulltext).
+
+• Reseteo rápido al estado por defecto si querés empezar de cero.
+
+• También tiene la opción para copiar todos los dorks de la categoría.
+
+• Export JSON con todas las notas y metadatos (listo para compartir o versionar).
+
+---
+
+## Uso (modo web local)
+
+1. Abrí `index.html` en tu navegador (o desplegalo en tu laboratorio local).  
+2. En **Target**, ingresá el dominio (ej.: `example.com`).  
+3. Seleccioná categoría(s) o buscá por palabra.  
+4. Elegí la cantidad de dorks a lanzar y el intervalo (ms) entre requests para controlar la velocidad.  
+   - Ejemplo: 50 dorks, intervalo 1500ms → evita bursts y reduce ruido.  
+5. Pulsá **Start** para abrir/ejecutar los dorks seleccionados.  
+6. Podés pausar / cancelar en cualquier momento.
+
+---
+
+## Gestión de dorks
+
+**Agregar:** botón “Agregar Dorks” → pegar 1 por línea o subir JSON.  
+**Editar:** abrir dork → editar texto / nota / categoría.  
+**Eliminar:** por dork o por categoría completa.  
+**Bulk:** seleccionar múltiples dorks → acciones (abrir, exportar, borrar).  
+**Etiquetas:** asigná tags/flags para filtrar rápidamente (e.g., auth, sensitive, public-files).
+
+---
+
+## Import / Export
+
+**Exportar:** descarga JSON con estructura `{ categories:[], dorks:[], notes:[], meta:{timestamp, version} }`.  
+**Importar:** subí JSON válido — la app reconstituye categorías, dorks y notas.  
+**Recomendado:** versioná tus exports (git / backups) antes de editar masivamente.
+
+---
+
+## Notas y UI helpers
+
+• Guardado automático local (localStorage) + botón manual Ctrl+S para snapshot inmediato.  
+• Indicador visual (círculo rojo) cuando una nota existe; hover muestra contenido completo (sin abrir).  
+• Buscador avanzado por categoría, tag y texto de nota.  
+• Panel de actividad: registro de las últimas acciones (última edición, import, export).
+
