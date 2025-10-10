@@ -11,7 +11,17 @@
 
 <picture> <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">  </picture>
 
- ### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXkzb2lnanpkZjRyNmZpNXBpbTZwa2R1ZzVnbHU5NTRpc283M3d6cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cHzz94qovyOVa/giphy.gif" width = 75px>  </picture> Arsenal de los Dorks de Google
+### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExengxYjI2cmVpaWtzNTRoZDNheDRhamdraTg2ZXF6M2dieDBxOXYwbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Vey3HIfx4EbAnioUmr/giphy.gif" width = 75px>  </picture> Problema que resuelve
+<br>
+
+**Cuando haces reconocimiento en bug bounty o pentesting, uno de los pasos más lentos y tediosos es buscar manualmente dorks útiles de Google, clasificarlos por tipo, mantenerlos actualizados y probarlos contra un objetivo. Normalmente hay que abrir muchas pestañas, copiar/pegar consultas, y repetir tareas una y otra vez.
+
+• Esta herramienta elimina ese dolor de cabeza: centraliza más de 12.000 dorks ya listos, bien categorizados y filtrables, para que puedas enfocarte en la investigación en lugar de perder tiempo con tareas repetitivas</a>.** 
+
+<br>
+
+
+### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXkzb2lnanpkZjRyNmZpNXBpbTZwa2R1ZzVnbHU5NTRpc283M3d6cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cHzz94qovyOVa/giphy.gif" width = 75px>  </picture> Arsenal de los Dorks de Google
 <br>
 
 **Repositorio con una colección extensa y categorizada de (12,000 Google Dorks) pensada para investigación, análisis y pruebas en entornos controlados. Fácil de buscar, filtrar e integrar en tus pipelines y herramientas de reconocimiento.Advertencia: uso responsable y legal únicamente — no escanees infraestructuras sin autorización,<a href="https://youtu.be/EzWE7fqrCVo" target="_blank" rel="noopener">demo de la tool Youtube</a>.** 
