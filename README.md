@@ -19,12 +19,12 @@
 
 <br>
 
-### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmpwejdiem9wNWtwMnRwOWJrcXV1MjBia2doeHI3YzhwZGpham4zYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ahIeS0wEoqxjqxkZeI/giphy.gif" width = 75px>  </picture> Qué aporta y cómo beneficia
+### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMmpwejdiem9wNWtwMnRwOWJrcXV1MjBia2doeHI3YzhwZGpham4zYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ahIeS0wEoqxjqxkZeI/giphy.gif" width = 75px>  </picture> Qué aporta y cómo beneficia <br>
 
-**Recon instantáneo – Al tener todos los dorks en un solo lugar, podés buscar vulnerabilidades comunes (backups expuestos, paneles de admin, errores, claves filtradas, etc.) en segundos sin tener que recordar consultas manualmente.<br>
-• Automatización parcial – La interfaz permite lanzar múltiples dorks a la vez contra un dominio con control de velocidad, ideal para usar como fase previa a herramientas más potentes como Burp, httpx o tus scripts personalizados.<br>
-• Gestión completa – Podés crear, editar, eliminar o agrupar dorks por categorías y etiquetas, agregar notas, versionar tus colecciones y exportarlas en JSON para compartirlas o usarlas en otros proyectos.<br>
-• Flujo profesional – Todo se ejecuta offline y localmente en tu navegador, sin dependencias externas. Perfecto para laboratorios o entornos restringidos. Además, al no hacer explotación ni rastreo automático, es seguro y legal como herramienta de análisis pasivo.<br>
+**Recon instantáneo – Al tener todos los dorks en un solo lugar, podés buscar vulnerabilidades comunes (backups expuestos, paneles de admin, errores, claves filtradas, etc.) en segundos sin tener que recordar consultas manualmente.<br><br>
+• Automatización parcial – La interfaz permite lanzar múltiples dorks a la vez contra un dominio con control de velocidad, ideal para usar como fase previa a herramientas más potentes como Burp, httpx o tus scripts personalizados.<br><br>
+• Gestión completa – Podés crear, editar, eliminar o agrupar dorks por categorías y etiquetas, agregar notas, versionar tus colecciones y exportarlas en JSON para compartirlas o usarlas en otros proyectos.<br><br>
+• Flujo profesional – Todo se ejecuta offline y localmente en tu navegador, sin dependencias externas. Perfecto para laboratorios o entornos restringidos. Además, al no hacer explotación ni rastreo automático, es seguro y legal como herramienta de análisis pasivo.<br><br>
 • Productividad brutal – Centralizar y organizar más de 47 categorías de dorks reduce horas de trabajo en la fase de recon y aumenta las chances de descubrir vectores interesantes al inicio de una auditoría.</a>.** 
 
 
