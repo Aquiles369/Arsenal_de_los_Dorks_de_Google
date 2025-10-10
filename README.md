@@ -11,6 +11,21 @@
 
 <picture> <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">  </picture>
 
+
+### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXkzb2lnanpkZjRyNmZpNXBpbTZwa2R1ZzVnbHU5NTRpc283M3d6cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cHzz94qovyOVa/giphy.gif" width = 75px>  </picture> Arsenal de los Dorks de Google
+<br>
+
+**Repositorio con una colección extensa y categorizada de (12,000 Google Dorks) pensada para investigación, análisis y pruebas en entornos controlados. Fácil de buscar, filtrar e integrar en tus pipelines y herramientas de reconocimiento.Advertencia: uso responsable y legal únicamente — no escanees infraestructuras sin autorización,<a href="https://youtu.be/EzWE7fqrCVo" target="_blank" rel="noopener">demo de la tool Youtube</a>.** 
+
+<br>
+
+
+<p align="center">
+ <img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/2025-10-01-20-09-06.gif"/>
+</p>
+
+<br>
+
 ### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExengxYjI2cmVpaWtzNTRoZDNheDRhamdraTg2ZXF6M2dieDBxOXYwbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Vey3HIfx4EbAnioUmr/giphy.gif" width = 75px>  </picture> Problema que resuelve
 <br>
 
@@ -25,22 +40,6 @@
 • Gestión completa – Podés crear, editar, eliminar o agrupar dorks por categorías y etiquetas, agregar notas, versionar tus colecciones y exportarlas en JSON para compartirlas o usarlas en otros proyectos.<br><br>
 • Flujo profesional – Todo se ejecuta offline y localmente en tu navegador, sin dependencias externas. Perfecto para laboratorios o entornos restringidos. Además, al no hacer explotación ni rastreo automático, es seguro y legal como herramienta de análisis pasivo.<br><br>
 • Productividad brutal – Centralizar y organizar más de 47 categorías de dorks reduce horas de trabajo en la fase de recon y aumenta las chances de descubrir vectores interesantes al inicio de una auditoría.</a>.** 
-
-
-<br>
-
-
-### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXkzb2lnanpkZjRyNmZpNXBpbTZwa2R1ZzVnbHU5NTRpc283M3d6cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cHzz94qovyOVa/giphy.gif" width = 75px>  </picture> Arsenal de los Dorks de Google
-<br>
-
-**Repositorio con una colección extensa y categorizada de (12,000 Google Dorks) pensada para investigación, análisis y pruebas en entornos controlados. Fácil de buscar, filtrar e integrar en tus pipelines y herramientas de reconocimiento.Advertencia: uso responsable y legal únicamente — no escanees infraestructuras sin autorización,<a href="https://youtu.be/EzWE7fqrCVo" target="_blank" rel="noopener">demo de la tool Youtube</a>.** 
-
-<br>
-
-
-<p align="center">
- <img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/2025-10-01-20-09-06.gif"/>
-</p>
 
 <br>
 
