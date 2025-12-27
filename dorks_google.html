@@ -4,19 +4,19 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="theme-color" content="#0f1226">
-<title>Dorks OSINT — Google (by Aquiles)</title>
+<title>Dorks OSINT  Google (by Aquiles)</title>
 <link rel="icon" href="assets/fav_Aquiles.png" type="image/x-icon">
 <style>
   :root{
-    --bg:#000000; --card:#0a1142; --ink:#285d2d; --muted:#515eef; --line:rgba(0, 0, 0, 0.14);
-    --accent:#7c5cff; --accent-2:#e00000; --accent-3:#00e0c2;
+    --bg:#000000; --card:#171313; --ink:#e1cccc; --muted:#1e7f11; --line:rgba(136, 28, 28, 0.14);
+    --accent:#803838; --accent-2:#e00000; --accent-3:#e31d1d;
   }
   *{box-sizing:border-box}
   body{
     margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;
     background:
-      radial-gradient(1100px 720px at 80% -10%, #1f2350 0%, transparent 60%),
-      radial-gradient(900px 620px at -10% 110%, #1a1e45 0%, transparent 60%),
+      radial-gradient(1100px 720px at 80% -10%, #0e0e0f 0%, transparent 60%),
+      radial-gradient(900px 620px at -10% 110%, #010101 0%, transparent 60%),
       var(--bg);
     color:var(--ink);
   }
@@ -26,14 +26,14 @@
     display:grid;
     grid-template-columns:auto 1fr auto auto auto auto auto; /* +1 col por Delay */
     gap:8px; align-items:center;
-    background:linear-gradient(180deg, rgba(22,26,56,.92), rgba(22,26,56,.66));
-    border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:10px 12px;
-    box-shadow:0 10px 24px rgba(0,0,0,.25);
+    background:linear-gradient(180deg, rgba(5, 5, 5, 0.92), rgba(19, 36, 168, 0.66));
+    border:1px solid rgba(200, 24, 24, 0.08); border-radius:14px; padding:10px 12px;
+    box-shadow:0 10px 24px rgba(21, 19, 111, 0.25);
   }
   h1{margin:0; font-size:18px; font-weight:900; letter-spacing:.2px}
   .target{display:flex; gap:8px; align-items:center}
   .search{width:100%; padding:8px 10px; border-radius:10px; border:1px solid var(--line);
-    background:rgba(255,255,255,.06); color:var(--ink); font-weight:800}
+    background:rgba(211, 201, 201, 0.06); color:var(--ink); font-weight:800}
   .searchWide{grid-column:1 / -1}
 
   .btn{border:none; border-radius:10px; padding:6px 10px; font-weight:800; cursor:pointer;
@@ -42,11 +42,11 @@
   .btn.tiny{padding:4px 8px; border-radius:8px; font-size:12px}
   .muted{color:var(--muted); font-size:12px}
 
-  .panel{background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-         border:1px solid rgba(255,255,255,.10); border-radius:14px; overflow:hidden}
+  .panel{background:linear-gradient(180deg, rgba(29, 18, 18, 0.08), rgba(255,255,255,.03));
+         border:1px solid rgba(255, 255, 255, 0.1); border-radius:14px; overflow:hidden}
   .body{display:grid; gap:10px; padding:10px 12px}
 
-  .cat{border:1px solid rgba(255,255,255,.10); border-radius:12px; overflow:hidden; background:rgba(255,255,255,.03)}
+  .cat{border:1px solid rgba(243, 236, 236, 0.1); border-radius:12px; overflow:hidden; background:rgba(255,255,255,.03)}
   .cat-head{display:grid; grid-template-columns:1fr auto; gap:8px; align-items:center; padding:10px 12px; background:rgba(255,255,255,.03); cursor:pointer}
   .cat-left{display:flex; align-items:center; gap:8px}
   .cat-name{font-weight:900}
@@ -55,18 +55,18 @@
   .cat-body{display:grid; gap:8px; padding:10px 12px; border-top:1px dashed var(--line)}
   .dork{display:grid; grid-template-columns:22px 1fr auto auto auto; gap:8px; align-items:center; padding:8px; border:1px solid rgba(255,255,255,.10); border-radius:10px}
   .dork label{font-weight:700}
-  a.link{color:#9bb8ff; text-decoration:none}
+  a.link{color:#1647c4; text-decoration:none}
   a.link:hover{text-decoration:underline}
 
   .noteBtn{display:inline-flex; align-items:center; gap:6px; border:1px solid var(--line); background:transparent; color:var(--ink); padding:2px 8px; border-radius:999px; font-weight:800; cursor:pointer}
-  .note-dot{display:inline-block; width:8px; height:8px; border-radius:999px; background:var(--accent-2); box-shadow:0 0 6px rgba(255,0,0,.7)}
+  .note-dot{display:inline-block; width:8px; height:8px; border-radius:999px; background:var(--accent-2); box-shadow:0 0 6px rgba(21, 0, 255, 0.7)}
 
   .modal{position:fixed; inset:0; display:none; place-items:center; background:rgba(0,0,0,.55); backdrop-filter: blur(3px); z-index:40}
   .modal.open{display:grid}
   .modal .box{background:var(--card); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:16px; width:min(760px,95%); margin-top:88px}
   .modal textarea{width:100%; min-height:260px; resize:vertical; background:rgba(255,255,255,.06); color:var(--ink); border:1px solid rgba(255,255,255,.14); border-radius:10px; padding:10px}
 
-  .tip{position:absolute; z-index:60; background:#0f1336; color:var(--ink);
+  .tip{position:absolute; z-index:60; background:#0e176a; color:var(--ink);
        border:1px solid rgba(255,255,255,.14); border-radius:10px; padding:10px 12px;
        max-width:min(520px, 90vw); box-shadow:0 10px 24px rgba(0,0,0,.35)}
   .tip h4{margin:0 0 6px 0; font-size:12px; color:#b7c1ff; letter-spacing:.2px}
@@ -87,12 +87,12 @@
 <body>
 <div class="wrap">
   <div class="head">
-    <h1>🔎 Dorks OSINT — Google</h1>
-    <input id="q" class="search searchWide" placeholder="Buscar (cat: para categorías, dork: para dorks, o texto libre)…"/>
+    <h1>Dorks OSINT Google</h1>
+    <input id="q" class="search searchWide" placeholder="Buscar  categorías, dorks, o texto libre"/>
 
     <div class="target">
       <strong>Target:</strong>
-      <input id="dTarget" class="search" placeholder="pepe.com o https://pepe.com"/>
+      <input id="dTarget" class="search" placeholder="nasa.com o https://nasa.com"/>
     </div>
 
     <!-- NUEVO: Controles de Delay -->
@@ -121,9 +121,9 @@
 <!-- Modal Notas -->
 <div id="modal" class="modal" role="dialog" aria-modal="true">
   <div class="box">
-    <h2 id="mTitle">📝 Notas</h2>
-    <div id="mMeta" class="muted">Última edición: —</div>
-    <p class="muted" style="margin:6px 0 10px 0">Ctrl/Cmd + S guarda — Esc cierra.</p>
+    <h2 id="mTitle"> Notas</h2>
+    <div id="mMeta" class="muted">Última edición: </div>
+    <p class="muted" style="margin:6px 0 10px 0">Ctrl/Cmd + S guarda , Esc cierra.</p>
     <textarea id="mArea"></textarea>
     <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:10px">
       <button id="mSave" class="btn">Guardar (Ctrl+S)</button>
@@ -345,7 +345,7 @@
   let noteCtx=null;
   function openNotes(ctx){
     noteCtx=ctx;
-    $mTitle.textContent = '📝 Notas — ' + (ctx.title||'');
+    $mTitle.textContent = ' Notas  ' + (ctx.title||'');
     $mArea.value = ctx.ref.note||'';
     $mMeta.textContent='Última edición: '+(ctx.ref.lastEdit||'—');
     $modal.classList.add('open'); $mArea.focus();
