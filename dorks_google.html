@@ -345,7 +345,7 @@
   let noteCtx=null;
   function openNotes(ctx){
     noteCtx=ctx;
-    $mTitle.textContent = ' Notas  ' + (ctx.title||'');
+    $mTitle.textContent = '   ' + (ctx.title||'');
     $mArea.value = ctx.ref.note||'';
     $mMeta.textContent='Última edición: '+(ctx.ref.lastEdit||'—');
     $modal.classList.add('open'); $mArea.focus();
