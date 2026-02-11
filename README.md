@@ -15,7 +15,7 @@
 ### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXkzb2lnanpkZjRyNmZpNXBpbTZwa2R1ZzVnbHU5NTRpc283M3d6cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cHzz94qovyOVa/giphy.gif" width = 75px>  </picture> Arsenal de los Dorks de Google
 <br>
 
-**Repositorio con una colección extensa y categorizada de (12,000 Google Dorks) pensada para investigación, análisis y pruebas en entornos controlados. Fácil de buscar, filtrar e integrar en tus pipelines y herramientas de reconocimiento.Advertencia: uso responsable y legal únicamente — no escanees infraestructuras sin autorización, <a href="https://youtu.be/EzWE7fqrCVo" target="_blank" rel="noopener">demo de la tool Youtube</a>.** 
+**Repositorio con una colección extensa y categorizada de (12,000 Google Dorks) pensada para investigación, análisis y pruebas en entornos controlados. Fácil de buscar, filtrar e integrar en tus pipelines y herramientas de reconocimiento.Advertencia: uso responsable y legal únicamente, no escanees infraestructuras sin autorización, <a href="https://youtu.be/EzWE7fqrCVo" target="_blank" rel="noopener">demo de la tool Youtube</a>.** 
 
 <br>
 
